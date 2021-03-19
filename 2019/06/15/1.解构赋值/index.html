@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+<title>扩展运算符-Quiet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+<meta name="keywords" content="hexo主题,hexo扁平化主题,Quiet主题">
+<meta name="description" content="描述">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+	<meta name="generator" content="Hexo 5.4.0"></head>
+
+	<body>
+		
+<link rel="stylesheet" href="/css/page.css">
+
+
+<link rel="stylesheet" href="/css/page_cente.css">
+
+
+<link rel="stylesheet" href="/css/atom-one-dark.css">
+
+
+<link rel="stylesheet" href="/css/header.css">
+
+	<div class="header">
+		<div class="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>ZHANGZC</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/qiaobug">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'
+    style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'>
+</div>
+<style>
+    .sidebar {
+        width: 0;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815)
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $(function () { $('.h-right-close>svg').click(function () { $('.sidebar').animate({ width: "66%" }, 500); $('.shelter').fadeIn("slow") }); $('.shelter').click(function (e) { $('.sidebar').animate({ width: "0" }, 500); $('.shelter').fadeOut("slow") }) })
+</script>
+		<script>
+			$(function () { $(window).scroll(function () { if ($(document).scrollTop() > 100) { $(".header-top").removeClass("header-move2"); $('.header-top').addClass('header-move1') } else { $(".header-top").removeClass("header-move1"); $('.header-top').addClass('header-move2') } }) });
+		</script>
+<div class="header-bg ">
+    <div class="bg-content">
+        <ul class="tag">
+            
+        </ul>
+        <h1>扩展运算符</h1>
+        <div class="article-info">
+            <div class="article-author">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <g>
+                        <path fill="#12183A"
+                            d="M6.187 15.265A6.47 6.47 0 0 0 10 16.5a6.47 6.47 0 0 0 3.813-1.235A4.99 4.99 0 0 0 10 13.5a4.99 4.99 0 0 0-3.813 1.765zM5.082 14.25A6.485 6.485 0 0 1 10 12c1.965 0 3.726.872 4.918 2.25a6.5 6.5 0 1 0-9.836 0zM10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-1.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                        </path>
+                    </g>
+                </svg>
+                
+                <span> <a href="">ZHANGZC</a></span>
+                <p>2019-06-15 16:23:26</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="article-content">
+    <div id="article" class="content">
+        <h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><blockquote>
+<p>本质： 模式匹配，只要两边的模式相同。左边的变量就会被赋予对应的值</p>
+</blockquote>
+<h5 id="1-数组的解构赋值"><a href="#1-数组的解构赋值" class="headerlink" title="1.数组的解构赋值"></a>1.数组的解构赋值</h5><blockquote>
+<p>数组的元素是按下标排列的，变量的取值由他的位置所决定</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> [a, c, d] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];<br><span class="hljs-keyword">let</span> [e, [f, [j]]] = [<span class="hljs-number">1</span>, [<span class="hljs-number">2</span>, [<span class="hljs-number">3</span>]]];<br></code></pre></td></tr></table></figure>
+
+<h5 id="2-不完全解构"><a href="#2-不完全解构" class="headerlink" title="2.不完全解构"></a>2.不完全解构</h5><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> [o] = []; <span class="hljs-comment">// undefined</span><br><span class="hljs-keyword">let</span> [bar, foo] = [<span class="hljs-number">1</span>]; <span class="hljs-comment">// 1 , undefined</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="3-嵌套数组解构"><a href="#3-嵌套数组解构" class="headerlink" title="3.嵌套数组解构"></a>3.嵌套数组解构</h5><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> [ , , third] = [<span class="hljs-string">&quot;foo&quot;</span>, <span class="hljs-string">&quot;bar&quot;</span>, <span class="hljs-string">&quot;baz&quot;</span>]; <span class="hljs-comment">//  third = baz</span><br><span class="hljs-keyword">let</span> [x, y, ...z] = [<span class="hljs-string">&#x27;a&#x27;</span>]; <span class="hljs-comment">// a, undefined, []</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="4-默认值"><a href="#4-默认值" class="headerlink" title="4.默认值"></a>4.默认值</h5><blockquote>
+<p>在解构赋值时是允许指定默认值<br>ES6内部使用的是严格全等运算符, 判断一个位置是否有值，所以，当其中某一个数组成员必须全等undefined才会生效默认值（undefined就会触发函数参数的默认值）</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> [foo] = []; <span class="hljs-comment">// undefined</span><br><span class="hljs-keyword">let</span> [foo = <span class="hljs-literal">false</span>] = []; <span class="hljs-comment">// false</span><br><span class="hljs-keyword">let</span> [x, y = <span class="hljs-string">&#x27;b&#x27;</span>] = [<span class="hljs-string">&#x27;a&#x27;</span>]; <span class="hljs-comment">// x=&#x27;a&#x27;, y=&#x27;b&#x27;</span><br><span class="hljs-keyword">let</span> [x, y = <span class="hljs-string">&#x27;b&#x27;</span>] = [<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-literal">undefined</span>]; <span class="hljs-comment">// x=&#x27;a&#x27;, y=&#x27;b&#x27;</span><br><span class="hljs-keyword">let</span> [x = <span class="hljs-number">1</span>] = [<span class="hljs-literal">null</span>]; <span class="hljs-comment">// 不与undefined全等  null</span><br></code></pre></td></tr></table></figure>
+
+
+<h5 id="5-对象的解构赋值"><a href="#5-对象的解构赋值" class="headerlink" title="5.对象的解构赋值**"></a>5.对象的解构赋值**</h5><blockquote>
+<p>对象的变量取值必须与属性同名，才能取到正确的值<br>内部机制: 先找到同名属性，然后再赋给对应的变量<br>取不到则说明解构失败，变量的值等于undefined<br>嵌套解构对象的时候需要注意嵌套规则，如果出现父属性都不存在的情况下, 还继续取子属性则会报错</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> &#123;foo&#125; = &#123;<span class="hljs-attr">bar</span>: <span class="hljs-string">&#x27;bar&#x27;</span>&#125;;  <span class="hljs-comment">// foo: undefined</span><br><br><span class="hljs-comment">// 报错</span><br><span class="hljs-keyword">let</span> &#123;<span class="hljs-attr">foo</span>: &#123;bar&#125;&#125; = &#123;<span class="hljs-attr">baz</span>: <span class="hljs-string">&#x27;baz&#x27;</span>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h5 id="6-变量重命名"><a href="#6-变量重命名" class="headerlink" title="6.变量重命名**"></a>6.变量重命名**</h5><blockquote>
+<p>foo是匹配的模式，foz才是变量。真正被赋值的是变量foz</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> &#123;<span class="hljs-attr">foo</span>: foz&#125; = &#123;<span class="hljs-attr">foo</span>: <span class="hljs-string">&#x27;foo&#x27;</span>&#125;; <span class="hljs-comment">// foz: &#x27;foo&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="7-已声明的变量不能作为解构赋值的变量"><a href="#7-已声明的变量不能作为解构赋值的变量" class="headerlink" title="7.已声明的变量不能作为解构赋值的变量"></a>7.已声明的变量不能作为解构赋值的变量</h5><blockquote>
+<p>JavaScript 引擎会将{x}理解成一个代码块，从而发生语法错误</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 错误的写法</span><br><span class="hljs-keyword">let</span> x;<br>&#123;x&#125; = &#123;<span class="hljs-attr">x</span>: <span class="hljs-number">1</span>&#125;;<br><span class="hljs-comment">// SyntaxError: syntax error</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="8-数组是一个特殊对象，因此可以对数组进行对象属性的解构"><a href="#8-数组是一个特殊对象，因此可以对数组进行对象属性的解构" class="headerlink" title="8.数组是一个特殊对象，因此可以对数组进行对象属性的解构"></a>8.数组是一个特殊对象，因此可以对数组进行对象属性的解构</h5><blockquote>
+<p>数组arr的0键对应的值是1，[arr.length - 1]就是2键，对应的值是3。方括号这种写法，属于“属性名表达式”</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];<br><span class="hljs-keyword">let</span> &#123;<span class="hljs-number">0</span> : first, [arr.length - <span class="hljs-number">1</span>] : last&#125; = arr;<br>first <span class="hljs-comment">// 1</span><br>last <span class="hljs-comment">// 3</span><br></code></pre></td></tr></table></figure>
+
+
+<h5 id="9-函数参数的解构赋值"><a href="#9-函数参数的解构赋值" class="headerlink" title="9.函数参数的解构赋值**"></a>9.函数参数的解构赋值**</h5><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">[x, y]</span>)</span>&#123;<br>  <span class="hljs-keyword">return</span> x + y;<br>&#125;<br>add([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]); <span class="hljs-comment">// 3</span><br><br><span class="hljs-comment">// 使用默认参数</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">move</span>(<span class="hljs-params">&#123;x = <span class="hljs-number">0</span>, y = <span class="hljs-number">0</span>&#125; = &#123;&#125;</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> [x, y];<br>&#125;<br><br>move(&#123;<span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">8</span>&#125;); <span class="hljs-comment">// [3, 8]</span><br>move(&#123;<span class="hljs-attr">x</span>: <span class="hljs-number">3</span>&#125;); <span class="hljs-comment">// [3, 0]</span><br>move(&#123;&#125;); <span class="hljs-comment">// [0, 0]</span><br>move(); <span class="hljs-comment">// [0, 0]</span><br></code></pre></td></tr></table></figure>
+
+
+<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><blockquote>
+<p>圆括号的问题： 圆括号有可能会导致解构的表达式有歧义，所以需要慎用</p>
+</blockquote>
+<h5 id="1-变量声明语句的时候不能用括号"><a href="#1-变量声明语句的时候不能用括号" class="headerlink" title="1.变量声明语句的时候不能用括号"></a>1.变量声明语句的时候不能用括号</h5><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> &#123;(x): c&#125; = &#123;&#125;;<br><span class="hljs-keyword">let</span> &#123; <span class="hljs-attr">o</span>: (&#123; <span class="hljs-attr">p</span>: p &#125;) &#125; = &#123; <span class="hljs-attr">o</span>: &#123; <span class="hljs-attr">p</span>: <span class="hljs-number">2</span> &#125; &#125;;<br></code></pre></td></tr></table></figure>
+
+<h5 id="2-函数参数也属于变量声明，因此不能带有圆括号"><a href="#2-函数参数也属于变量声明，因此不能带有圆括号" class="headerlink" title="2.函数参数也属于变量声明，因此不能带有圆括号"></a>2.函数参数也属于变量声明，因此不能带有圆括号</h5><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 报错</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params">[(z)]</span>) </span>&#123; <span class="hljs-keyword">return</span> z; &#125;<br><span class="hljs-comment">// 报错</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params">[z,(x)]</span>) </span>&#123; <span class="hljs-keyword">return</span> x; &#125;<br></code></pre></td></tr></table></figure>
+
+<h5 id="3-赋值语句的模式"><a href="#3-赋值语句的模式" class="headerlink" title="3.赋值语句的模式"></a>3.赋值语句的模式</h5><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">(&#123; <span class="hljs-attr">p</span>: d &#125;) = &#123; <span class="hljs-attr">p</span>: <span class="hljs-number">42</span> &#125;;<br>([a]) = [<span class="hljs-number">5</span>];<br></code></pre></td></tr></table></figure>
+
+<h5 id="4-可使用圆括号的时候"><a href="#4-可使用圆括号的时候" class="headerlink" title="4.可使用圆括号的时候"></a>4.可使用圆括号的时候</h5><blockquote>
+<p>赋值语句的非模式的部分，可以使用圆括号</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">[(b)] = [<span class="hljs-number">4</span>]; <span class="hljs-comment">// 正确</span><br>(&#123; <span class="hljs-attr">k</span>: (d) &#125; = &#123;&#125;); <span class="hljs-comment">// 正确</span><br>[(parse.prop)] = [<span class="hljs-number">3</span>]; <span class="hljs-comment">// 正确</span><br></code></pre></td></tr></table></figure>
+
+
+<p>用途：</p>
+<ol>
+<li>变量值的交换</li>
+<li>函数参数的提取及定义，默认值的定义</li>
+<li>函数及模块的抛出值，引入模块(提取所需的方法)</li>
+<li>提取 JSON 数据，解构赋值对提取 JSON 对象中的数据</li>
+</ol>
+
+    </div>
+</div>
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 109;
+        width: 600px !important;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            width: 88%
+        }
+    }
+</style>
+<script>
+    $(function () { $('#article').click(function (e) { if (e.target.tagName == "IMG") { if ($('#nonediv').length == 0) { let MImg = `<div id='noneimg'><img src='${e.target.currentSrc}'></div>`; let MDiv = "<div id='nonediv' style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'></div>"; $('#article').append(MDiv); $('#article').append(MImg); $("#nonediv").fadeIn("slow"); $("#noneimg img").fadeIn("slow") } } else { if ($('#nonediv').length !== 0) { $("#noneimg ").fadeOut("slow"); $("#nonediv").fadeOut("slow"); setTimeout(function () { $('#nonediv').remove(); $('#noneimg').remove() }, 500) } } }); $('.article-content').addClass('content-move') });
+</script>
+<div class="Last-Next">
+    
+
+    
+    <a href="/2019/02/15/9.Set%E4%B8%8EMap/">
+        <div class="next">
+            <span>下一篇</span>
+            <p>Set与Map讨论</p>
+        </div>
+    </a>
+    
+</div>
+		
+<link rel="stylesheet" href="/css/food.css">
+
+<div class="footer">
+	<div class="Copyright">
+		©2021 By ZHANGZC. 主题：<a
+			style="text-decoration: none;display: contents; color: #898F9F;"
+			target="_blank" rel="noopener" href="https://github.com/qiaobug/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a target="_blank" rel="noopener" href="https://github.com/qiaobug">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: block;
+            border-radius: 50%;
+            width: 66px;
+            height: 66px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            transition: border .5s;
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 30px;
+            height: 30px;
+            margin-top: 17.5px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $('#js-go_top').gotoTop({ offset: 500, speed: 300, animationShow: { 'transform': 'translate(0,0)', 'transition': 'transform .5s ease-in-out' }, animationHide: { 'transform': 'translate(100px,0)', 'transition': 'transform .5s ease-in-out' } });
+</script>
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/QiaoBug/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	</body>
+
+</html>

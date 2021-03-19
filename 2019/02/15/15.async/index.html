@@ -2,8 +2,8 @@
 <html>
 
 	<head>
-
-<title>Hello World-Quiet</title>
+		
+<title>Set与Map讨论-Quiet</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,7 +19,7 @@
 	<meta name="generator" content="Hexo 5.4.0"></head>
 
 	<body>
-
+		
 <link rel="stylesheet" href="/css/page.css">
 
 
@@ -40,61 +40,61 @@
 			</div>
 			<div class="h-right">
 				<ul>
-
-
+					
+						
 								<li>
 									<a href="/">
 										HOME
 									</a>
 									<span class="dot"></span>
 								</li>
-
-
-
+								
+									
+						
 								<li>
 									<a href="/archives">
 										ARCHIVE
 									</a>
 									<span class="dot"></span>
 								</li>
-
-
-
+								
+									
+						
 								<li>
 									<a href="/categories">
 										CATEGORIES
 									</a>
 									<span class="dot"></span>
 								</li>
-
-
-
+								
+									
+						
 								<li>
 									<a href="/tags">
 										TAGS
 									</a>
 									<span class="dot"></span>
 								</li>
-
-
-
+								
+									
+						
 								<li>
 									<a href="/links">
 										LINKS
 									</a>
 									<span class="dot"></span>
 								</li>
-
-
-
+								
+									
+						
 								<li>
 									<a href="/about">
 										ABOUT
 									</a>
 									<span class="dot"></span>
 								</li>
-
-
+								
+									
 				</ul>
 			</div>
 			<div class="h-right-close">
@@ -110,38 +110,38 @@
         <h2>ZHANGZC</h2>
     </div>
     <ul>
-
+        
         <li>
             <a href="/">HOME</a>
         </li>
-
+        
         <li>
             <a href="/archives">ARCHIVE</a>
         </li>
-
+        
         <li>
             <a href="/categories">CATEGORIES</a>
         </li>
-
+        
         <li>
             <a href="/tags">TAGS</a>
         </li>
-
+        
         <li>
             <a href="/links">LINKS</a>
         </li>
-
+        
         <li>
             <a href="/about">ABOUT</a>
         </li>
-
+        
     </ul>
     <div class="my_foot">
-
+        
         <a target="_blank" rel="noopener" href="https://github.com/qiaobug">
             <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
         </a>
-
+        
     </div>
 </div>
 <div class='shelter'
@@ -242,12 +242,12 @@
 <div class="header-bg ">
     <div class="bg-content">
         <ul class="tag">
-
+            
         </ul>
-        <h1>Hello World</h1>
+        <h1>Set与Map讨论</h1>
         <div class="article-info">
             <div class="article-author">
-
+                
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                     <g>
                         <path fill="#12183A"
@@ -255,29 +255,48 @@
                         </path>
                     </g>
                 </svg>
-
+                
                 <span> <a href="">ZHANGZC</a></span>
-                <p>2021-03-19 16:09:29</p>
+                <p>2019-02-15 20:33:36</p>
             </div>
         </div>
     </div>
 </div>
 <div class="article-content">
     <div id="article" class="content">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <p>async =&gt; Generator 函数的语法糖<br>使得异步操作变得更加方便</p>
+<blockquote>
+<p>async函数就是将 Generator 函数的星号（*）替换成async，将yield替换成await</p>
+</blockquote>
+<ol>
+<li>async自带执行器，genertor函数必须靠执行器（co模块）</li>
+<li>更好的语义化，async和await，比起星号和yield，语义更清楚了。async表示函数里有异步操作，await表示紧跟在后面的表达式需要等待结果</li>
+<li>返回值是 Promise</li>
+<li>更广的适用性<br>yield命令后面只能是 Thunk 函数或 Promise 对象<br>yield命令后面只能是 Thunk 函数或 Promise 对象(数值、字符串和布尔值，但这时会自动转成立即 resolved 的 Promise 对象)</li>
+<li>genertor函数的语法糖</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">timeout</span>(<span class="hljs-params">ms</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">setTimeout</span>(resolve, ms);<br>  &#125;);<br>&#125;<br><br><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">asyncPrint</span>(<span class="hljs-params">value, ms</span>) </span>&#123;<br>  <span class="hljs-keyword">await</span> timeout(ms);<br>  <span class="hljs-built_in">console</span>.log(value);<br>&#125;<br><br>asyncPrint(<span class="hljs-string">&#x27;hello world&#x27;</span>, <span class="hljs-number">5000</span>);<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>语法：</p>
+<p>返回 Promise 对象<br>async函数返回一个 Promise 对象。</p>
+<p>async函数内部return语句返回的值，会成为then方法回调函数的参数</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;hello world&#x27;</span>;<br>&#125;<br><br>f().then(<span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(v))<br><span class="hljs-comment">// &quot;hello world&quot;</span><br><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>async函数内部抛出错误，会导致返回的 Promise 对象变为reject状态。抛出的错误对象会被catch方法回调函数接收到</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&#x27;出错了&#x27;</span>);<br>&#125;<br><br>f().then(<br>  v =&gt; <span class="hljs-built_in">console</span>.log(v),<br>  e =&gt; <span class="hljs-built_in">console</span>.log(e)<br>)<br><span class="hljs-comment">// Error: 出错了</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+<p>Promise 对象的状态变化</p>
+<blockquote>
+<p>async函数返回的 Promise 对象，必须等到内部所有await命令后面的 Promise 对象执行完，才会发生状态改变，除非遇到return语句或者抛出错误。也就是说，只有async函数内部的异步操作执行完，才会执行then方法指定的回调函数</p>
+</blockquote>
+<p>await 命令</p>
+<blockquote>
+<p>await命令后面是一个 Promise 对象，返回该对象的结果。如果不是 Promise 对象，就直接返回对应的值</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-comment">// 等同于</span><br>  <span class="hljs-comment">// return 123;</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-number">123</span>;<br>&#125;<br><br>f().then(<span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(v))<br><span class="hljs-comment">// 123</span><br></code></pre></td></tr></table></figure>
     </div>
 </div>
 <style>
@@ -305,18 +324,25 @@
     $(function () { $('#article').click(function (e) { if (e.target.tagName == "IMG") { if ($('#nonediv').length == 0) { let MImg = `<div id='noneimg'><img src='${e.target.currentSrc}'></div>`; let MDiv = "<div id='nonediv' style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'></div>"; $('#article').append(MDiv); $('#article').append(MImg); $("#nonediv").fadeIn("slow"); $("#noneimg img").fadeIn("slow") } } else { if ($('#nonediv').length !== 0) { $("#noneimg ").fadeOut("slow"); $("#nonediv").fadeOut("slow"); setTimeout(function () { $('#nonediv').remove(); $('#noneimg').remove() }, 500) } } }); $('.article-content').addClass('content-move') });
 </script>
 <div class="Last-Next">
+    
+    <a href="/2019/02/15/14.generator/">
+        <div class="last">
+            <span>上一篇</span>
+            <p>Set与Map讨论</p>
+        </div>
+    </a>
+    
 
-
-
-    <a href="/2019/02/15/%E7%9C%9F%E7%89%9B%E9%80%BC/">
+    
+    <a href="/2019/02/15/12.promise/">
         <div class="next">
             <span>下一篇</span>
             <p>Set与Map讨论</p>
         </div>
     </a>
-
+    
 </div>
-
+		
 <link rel="stylesheet" href="/css/food.css">
 
 <div class="footer">
@@ -326,11 +352,11 @@
 			target="_blank" rel="noopener" href="https://github.com/qiaobug/hexo-theme-quiet">Quiet</a>
 	</div>
 	<div class="contact">
-
+		
 		<a target="_blank" rel="noopener" href="https://github.com/qiaobug">
 			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
 		</a>
-
+		
 	</div>
 </div>
 
